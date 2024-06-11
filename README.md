@@ -1,57 +1,108 @@
 # Predicting Ethereum Price with Python and Machine Learning
 
-This repository contains a Jupyter notebook that demonstrates how to analyze and predict the price of Ethereum using Python and various machine learning techniques. The dataset used for this analysis spans from August 7, 2015, to June 2, 2024.
+This project aims to analyze and predict Ethereum prices using two different machine learning approaches: Support Vector Machine (SVM) with Scikit-learn and Long Short-Term Memory (LSTM) networks with TensorFlow and Keras.
+By comparing these approaches, we can understand their effectiveness in handling time series data and their predictive capabilities for cryptocurrency prices.
+This repository contains two ipynb files demonstrating how to analyze and predict the price of Ethereum using Python and various machine-learning techniques. The dataset used for this analysis spans from August 7, 2015, to June 2, 2024.
 
-## Files in the Repository
+### Machine Learning Models
 
-- `main.ipynb`: Jupyter notebook containing the data analysis, visualization, and machine learning steps for predicting Ethereum prices.
-- `ethereum_2015-08-07_2024-06-02.csv`: CSV file containing Ethereum price data, including columns for `Start`, `End`, `Open`, `High`, `Low`, `Close`, `Volume`, and `Market Cap`.
+#### 1. Support Vector Machine (SVM) with Scikit-learn
+- **Preprocessing**:
+  - Data is normalized using `MinMaxScaler`.
+  - Missing values are handled.
+- **Hyperparameter Tuning**:
+  - Hyperparameters such as `C`, `kernel`, and `gamma` are tuned using `GridSearchCV`.
+- **Model Evaluation**:
+  - The model is evaluated using MSE and R² metrics.
+- **Advantages**:
+  - SVM is effective in high-dimensional spaces.
+  - SVM is memory efficient.
+- **Disadvantages**:
+  - SVMs are less effective when the number of features exceeds the number of samples.
+  - SVMs do not perform well with large datasets.
 
-## Overview
+#### 2. Long Short-Term Memory (LSTM) with TensorFlow and Keras
+- **Preprocessing**:
+  - Data is normalized using `MinMaxScaler`.
+  - Missing values are handled.
+- **Model Architecture**:
+  - An LSTM network is constructed with multiple layers, including dropout for regularization.
+- **Hyperparameter Tuning**:
+  - Hyperparameters such as the number of LSTM units, dropout rates, and batch size are manually adjusted.
+- **Model Evaluation**:
+  - The model is evaluated using MSE and R² metrics.
+- **Advantages**:
+  - LSTMs are effective for time series prediction due to their ability to capture temporal dependencies.
+  - LSTMs can handle long-term dependencies.
+- **Disadvantages**:
+  - LSTMs require more computational resources.
+  - LSTMs can be complex to tune.
 
-### Dataset
+### Results and Comparison
+- **Performance Metrics**:
+  - The performance of each model is compared using MSE and R² metrics.
+  - The results indicate that LSTM outperforms SVM in capturing the temporal dependencies of the Ethereum price data.
+- **Model Visualization**:
+  - The architecture of the LSTM model is visualized to understand the structure and complexity.
+  - Training and validation loss plots are used to analyze the model's learning process.
 
-The dataset includes the following columns:
-- `Start`: The start date of the data entry.
-- `End`: The end date of the data entry.
-- `Open`: The opening price of Ethereum on the start date.
-- `High`: The highest price of Ethereum on the start date.
-- `Low`: The lowest price of Ethereum on the start date.
-- `Close`: The closing price of Ethereum on the start date.
-- `Volume`: The trading volume of Ethereum on the start date.
-- `Market Cap`: The market capitalization of Ethereum on the start date.
-
-### Jupyter Notebook (`main.ipynb`)
-
-The notebook is structured as follows:
-1. **Introduction**: Description of the project and its objectives.
-2. **Data Loading and Preprocessing**: 
-   - Importing necessary libraries.
-   - Loading the Ethereum price data from the CSV file.
-   - Displaying the first few rows of the dataset.
-3. **Data Analysis and Visualization**: 
-   - Exploratory data analysis to understand the trends and patterns in the data.
-   - Visualizing the historical prices and other relevant metrics.
-4. **Feature Engineering**: Creating additional features from the raw data to improve the performance of machine learning models.
-5. **Model Building and Evaluation**: 
-   - Building machine learning models to predict Ethereum prices.
-   - Evaluating the performance of the models using appropriate metrics.
-6. **Conclusion**: Summarizing the findings and potential future work.
+### Work in Progress
+- Further tuning and optimization of hyperparameters for both models.
+- Exploration of additional preprocessing techniques.
+- Incorporation of other evaluation metrics such as Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
+- Implementation of additional deep learning models for comparison.
 
 ## Getting Started
 
 ### Prerequisites
+- Python 3.x
+- Scikit-learn
+- TensorFlow
+- Keras
+- Pandas
+- Numpy
+- Matplotlib
+- Graphviz (for model visualization)
 
-To run the notebook, you need to have the following libraries installed:
-- `matplotlib`
-- `datetime`
-- `seaborn`
-- `numpy`
-- `re`
-- `mplfinance`
-- `pandas_datareader`
-- `pandas`
+### Installation
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/gappeah/Ethereum-Prediction-ML.git
+    cd ethereum-price-prediction
+    ```
+2. Install the required packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-You can install these libraries using `pip`:
-```sh
-pip install matplotlib seaborn numpy mplfinance pandas_datareader pandas
+### Usage
+1. Preprocess the data and handle missing values.
+2. Normalize the features using `MinMaxScaler`.
+3. Train and evaluate the SVM model using Scikit-learn:
+    ```python
+    python main_svm.ipynb
+    ```
+4. Train and evaluate the LSTM model using TensorFlow and Keras:
+    ```python
+    python main_lstm_copy.ipynb
+    ```
+5. Visualize the results and compare the performance metrics.
+
+### Results
+- Visualizations of the model architectures.
+- Plots comparing the actual and predicted Ethereum prices.
+- Performance metrics (MSE and R²) for both models.
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or additions.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+## References
+
+- [Scikit-learn documentation](https://scikit-learn.org/stable/)
+- [TensorFlow documentation](https://www.tensorflow.org/)
+- [Keras documentation](https://keras.io/)
+- [Graphviz download](https://graphviz.gitlab.io/download/)
