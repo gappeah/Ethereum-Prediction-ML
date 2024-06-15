@@ -4,101 +4,52 @@ This project aims to analyze and predict Ethereum prices using two different mac
 By comparing these approaches, we can understand their effectiveness in handling time series data and their predictive capabilities for cryptocurrency prices.
 This repository contains two ipynb files demonstrating how to analyze and predict the price of Ethereum using Python and various machine-learning techniques. The dataset used for this analysis spans from August 7, 2015, to June 2, 2024.
 
-### Machine Learning Models
+## LSTM with Keras and TensorFlow
 
-#### 1. Support Vector Machine (SVM) with Scikit-learn
-- **Preprocessing**:
-  - Data is normalized using `MinMaxScaler`.
-  - Missing values are handled.
-- **Hyperparameter Tuning**:
-  - Hyperparameters such as `C`, `kernel`, and `gamma` are tuned using `GridSearchCV`.
-- **Model Evaluation**:
-  - The model is evaluated using MSE and R² metrics.
-- **Advantages**:
-  - SVM is effective in high-dimensional spaces.
-  - SVM is memory efficient.
-- **Disadvantages**:
-  - SVMs are less effective when the number of features exceeds the number of samples.
-  - SVMs do not perform well with large datasets.
+The LSTM approach utilizes deep learning techniques to capture the temporal dependencies in the Ethereum price data. The key steps involved are:
 
-#### 2. Long Short-Term Memory (LSTM) with TensorFlow and Keras
-- **Preprocessing**:
-  - Data is normalized using `MinMaxScaler`.
-  - Missing values are handled.
-- **Model Architecture**:
-  - An LSTM network is constructed with multiple layers, including dropout for regularization.
-- **Hyperparameter Tuning**:
-  - Hyperparameters such as the number of LSTM units, dropout rates, and batch size are manually adjusted.
-- **Model Evaluation**:
-  - The model is evaluated using MSE and R² metrics.
-- **Advantages**:
-  - LSTMs are effective for time series prediction due to their ability to capture temporal dependencies.
-  - LSTMs can handle long-term dependencies.
-- **Disadvantages**:
-  - LSTMs require more computational resources.
-  - LSTMs can be complex to tune.
+1. **Data Preprocessing**
+  * Load the Ethereum price data from a CSV file.
+  * Normalize the features (Open, High, Low, Close, Volume) using MinMaxScaler.
+2. **Sequence Creation**
+  * Create sequences of a fixed length from the normalized data.
+  * Split the sequences into training and testing sets.
+3. **Model Building**
+  * Construct an LSTM model with two LSTM layers, dropout layers, and a dense output layer.
+  * Compile the model with the Adam optimizer and mean squared error loss.
+4. **Model Training**
+  * Train the LSTM model on the training data for a specified number of epochs.
+5. **Model Evaluation**
+  * Evaluate the trained model on the test data and calculate the test loss.
 
-### Results and Comparison
-- **Performance Metrics**:
-  - The performance of each model is compared using MSE and R² metrics.
-  - The results indicate that LSTM outperforms SVM in capturing the temporal dependencies of the Ethereum price data.
-- **Model Visualization**:
-  - The architecture of the LSTM model is visualized to understand the structure and complexity.
-  - Training and validation loss plots are used to analyze the model's learning process.
+The LSTM model is implemented using Keras with TensorFlow as the backend.
 
-### Work in Progress
-- Further tuning and optimization of hyperparameters for both models.
-- Exploration of additional preprocessing techniques.
-- Incorporation of other evaluation metrics such as Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
-- Implementation of additional deep learning models for comparison.
+## SVR with scikit-learn
 
-## Getting Started
+The SVR approach employs a support vector machine algorithm for regression tasks. The key steps involved are:
 
-### Prerequisites
-- Python 3.x
-- Scikit-learn
-- TensorFlow
-- Keras
-- Pandas
-- Numpy
-- Matplotlib
-- Graphviz (for model visualization)
+1. **Data Preprocessing**
+  * Load the Ethereum price data from a CSV file.
+  * Normalize the features (Open, High, Low, Close, Volume) using MinMaxScaler.
+2. **Feature Engineering**
+  * Create additional features, such as moving averages or technical indicators, if desired.
+3. **Model Building**
+  * Split the data into training and testing sets.
+  * Instantiate an SVR model with appropriate kernel and hyperparameters.
+4. **Model Training**
+  * Train the SVR model on the training data.
+5. **Model Evaluation**
+  * Evaluate the trained model on the test data and calculate performance metrics like mean squared error or R-squared.
 
-### Installation
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/gappeah/Ethereum-Prediction-ML.git
-    cd ethereum-price-prediction
-    ```
-2. Install the required packages:
-    ```bash
-    pip install -r requirements.txt
-    ```
+The SVR model is implemented using the scikit-learn library.
 
-### Usage
-1. Preprocess the data and handle missing values.
-2. Normalize the features using `MinMaxScaler`.
-3. Train and evaluate the SVM model using Scikit-learn:
-    ```python
-    python main_svm.ipynb
-    ```
-4. Train and evaluate the LSTM model using TensorFlow and Keras:
-    ```python
-    python main_lstm_copy.ipynb
-    ```
-5. Visualize the results and compare the performance metrics.
+## Conclusion
+A Long Short-Term Memory (LSTM) model with Keras and TensorFlow is an appropriate choice for predicting Ethereum prices due to its ability to effectively model long-term dependencies and subtle patterns present in cryptocurrency data. The LSTM architecture, with its recurrent connections and gating mechanisms, can capture the intricate nuances and temporal relationships inherent in financial time series data.
 
-### Results
-- Visualizations of the model architectures.
-- Plots comparing the actual and predicted Ethereum prices.
-- Performance metrics (MSE and R²) for both models.
+LSTMs are particularly advantageous when dealing with long sequences of data, as they can selectively remember and forget information over extended periods, making them well-suited for tasks like cryptocurrency price prediction, where past price movements and market dynamics can influence future prices.
 
-## Contributing
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or additions.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
+By leveraging the power of deep learning frameworks like Keras and TensorFlow, the LSTM model can be efficiently trained on large datasets, allowing it to learn complex patterns and make accurate predictions on unseen data.
+While the performance of other models like SVR should also be evaluated, the LSTM approach with Keras and TensorFlow demonstrates promising results and aligns well with the characteristics of cryptocurrency price data, making it a strong candidate for this prediction task.
 
 ## References
 
