@@ -1,6 +1,6 @@
 # Predicting Ethereum Price with Python and Machine Learning
 
-This project aims to analyze and predict Ethereum prices using two different machine learning approaches: Support Vector Machine (SVM) with Scikit-learn and Long Short-Term Memory (LSTM) networks with TensorFlow and Keras.
+This project aims to analyze and predict Ethereum prices using Long Short-Term Memory (LSTM) networks with TensorFlow and Keras. The project also used Support Vector Machine (SVM) and Random  with Scikit-learn and 
 By comparing these approaches, we can understand their effectiveness in handling time series data and their predictive capabilities for cryptocurrency prices.
 This repository contains two ipynb files demonstrating how to analyze and predict the price of Ethereum using Python and various machine-learning techniques. The dataset used for this analysis spans from August 7, 2015, to June 2, 2024.
 
