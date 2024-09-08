@@ -37,7 +37,7 @@ Ensure you have Python installed (preferably version 3.7 or higher). You'll also
 To install the required packages, run the following command:
 
 ```bash
-pip install numpy pandas matplotlib scikit-learn tensorflow
+pip install numpy pandas matplotlib scikit-learn tensorflow keras kerastuner pydot pydotplus graphviz
 ```
 
 ### Files
