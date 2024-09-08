@@ -49,7 +49,7 @@ pip install numpy pandas matplotlib scikit-learn tensorflow
 
 1. **Clone the repository** or download the necessary files.
    ```bash
-   git clone <https://github.com/gappeah/https://github.com/gappeah/Ethereum-Prediction-ML>
+   git clone https://github.com/gappeah/https://github.com/gappeah/Ethereum-Prediction-ML
    ```
 
 2. **Prepare the dataset**: Ensure the `ethereum_2015-08-07_2024-09-08.csv` file is in the working directory.
