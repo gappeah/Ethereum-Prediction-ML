@@ -107,24 +107,63 @@ print(f"R-squared: {r2}")
 
 You can visualise the actual vs. predicted Ethereum prices using the following code:
 
+![Ethereum Price Prediction](https://github.com/user-attachments/assets/f8e69e0a-38be-49ec-b875-20329eba58a5)
 ```python
 import matplotlib.pyplot as plt
 
-# Plot the results
 plt.figure(figsize=(14, 5))
-plt.plot(y_test, color='blue', label='Actual Ethereum Prices')
-plt.plot(y_pred, color='red', label='Predicted Ethereum Prices')
+plt.plot(actual_prices, color='blue', label='Actual Ethereum Prices')
+plt.plot(predicted_prices, color='red', label='Predicted Ethereum Prices')
 plt.title('Ethereum Price Prediction')
 plt.xlabel('Time')
 plt.ylabel('Price')
 plt.legend()
 plt.show()
 ```
+![Ethereum Price Prediction After Hyperparameter Tuning](https://github.com/user-attachments/assets/5327f554-6fd6-4240-b232-a4bc176c2304)
+```python
+import matplotlib.pyplot as plt
+plt.figure(figsize=(14, 5))
+plt.plot(actual_prices, color='blue', label='Actual Ethereum Prices')
+plt.plot(predicted_prices, color='red', label='Predicted Ethereum Prices')
+plt.title('Ethereum Price Prediction After Hyperparameter Tuning')
+plt.xlabel('Time')
+plt.ylabel('Price')
+plt.legend()
+plt.show()
+
+```
+![Model Loss](https://github.com/user-attachments/assets/257e2563-c503-4345-807e-9333471c1d9a)
+```python
+import matplotlib.pyplot as plt
+plt.figure(figsize=(14, 5))
+plt.plot(actual_prices, color='blue', label='Actual Ethereum Prices')
+plt.plot(predicted_prices, color='red', label='Predicted Ethereum Prices')
+plt.title('Ethereum Price Prediction')
+plt.xlabel('Time')
+plt.ylabel('Price')
+plt.legend()
+plt.show()
+```
+![model_architecture](https://github.com/user-attachments/assets/ed4d9ee9-c31e-4a1b-9c7d-6799d6363785)
+```python
+import matplotlib.pyplot as plt
+# Plot training & validation loss values
+plt.figure(figsize=(14, 5))
+plt.plot(history.history['loss'], label='Train Loss')
+plt.plot(history.history['val_loss'], label='Validation Loss')
+plt.title('Model Loss')
+plt.ylabel('Loss')
+plt.xlabel('Epoch')
+plt.legend(loc='upper right')
+plt.show()
+
+```
+
+
 
 ## Model Performance
-
 The model's performance is evaluated using metrics such as:
-
 - **Mean Squared Error (MSE)**: Measures the average squared difference between actual and predicted prices.
 - **R-squared (R²)**: Indicates the proportion of the variance in the dependent variable that is predictable from the independent variables.
 - **Mean Absolute Error (MAE)**: Measures the average absolute difference between actual and predicted prices.
@@ -145,7 +184,7 @@ Accuracy: 98.31288343558282%
 ## Conclusion
 A Long Short-Term Memory (LSTM) model with Keras and TensorFlow is an appropriate choice for predicting Ethereum prices due to its ability to effectively model long-term dependencies and subtle patterns present in cryptocurrency data. The LSTM architecture, with its recurrent connections and gating mechanisms, can capture the intricate nuances and temporal relationships inherent in financial time series data.
 
-This project demonstrates the use of LSTM neural networks for predicting Ethereum prices based on historical data. It showcases the complete process of loading and preprocessing data, building and training an LSTM model, and evaluating its performance using various metrics.
+This project demonstrates the use of LSTM neural networks for predicting Ethereum prices based on historical data. It showcases the complete process of loading and preprocessing data, building and training an LSTM model and evaluating its performance using various metrics.
 
 LSTMs are particularly advantageous when dealing with long sequences of data, as they can selectively remember and forget information over extended periods, making them well-suited for tasks like cryptocurrency price prediction, where past price movements and market dynamics can influence future prices.
 
