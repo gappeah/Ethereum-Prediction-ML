@@ -32,6 +32,7 @@ Ensure you have Python installed (preferably version 3.7 or higher). You'll also
 - `pydotplus`
 - `graphviz`
 - `pydot`
+- `kerastuner`
 
 To install the required packages, run the following command:
 
