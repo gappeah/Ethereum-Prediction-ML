@@ -160,8 +160,6 @@ plt.show()
 
 ```
 
-
-
 ## Model Performance
 The model's performance is evaluated using metrics such as:
 - **Mean Squared Error (MSE)**: Measures the average squared difference between actual and predicted prices.
