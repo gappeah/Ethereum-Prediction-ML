@@ -6,6 +6,13 @@ This project predicts the future price of Ethereum using historical data and a m
 
 The primary objective of this project is to predict Ethereum prices using historical data. The model is trained using an LSTM network and the data consists of Ethereum prices from August 2015 to September 2024. The predictions are evaluated using metrics such as **Mean Squared Error (MSE)**, **R-squared (R²)**, **Root Mean Squared Error (RMSE)**, **Mean Absolute Error (MAE)** and **Accuracy** (though accuracy is unconventional in regression tasks, it is also computed here).
 
+### Key Features
+
+- Utilises LSTM for time-series forecasting.
+- Preprocesses Ethereum price data and splits it into training and testing sets.
+- Evaluates the model based on error metrics such as MSE and R².
+- Visualises actual vs. predicted Ethereum prices.
+
 ## What is Ethereum 
 Ethereum is a decentralised, global platform that uses blockchain technology to enable the creation of digital applications and currencies. It's known for its native cryptocurrency, ether (ETH), and is often mentioned alongside Bitcoin as a leader in the cryptocurrency and blockchain space. 
 Ethereum is a decentralized, open-source blockchain platform that enables developers to build and deploy decentralized applications (DApps) through the use of smart contracts. It was proposed by Vitalik Buterin in 2013 and officially launched on July 30, 2015. The native cryptocurrency of the Ethereum network is Ether (ETH), which serves multiple purposes, including transaction fees and as a means of value transfer.
@@ -23,23 +30,15 @@ The EVM is a runtime environment for executing smart contracts and DApps on the 
 Ethereum transitioned from a Proof-of-Work (PoW) to a Proof-of-Stake (PoS) consensus mechanism with an upgrade known as "the Merge" on September 15, 2022. In PoS, validators are chosen to create new blocks based on the amount of ETH they hold and are willing to "stake" as collateral. This shift significantly reduced Ethereum's energy consumption by approximately 99% compared to its previous mining model[2][5].
 
 ### Gas Fees
-Transactions on the Ethereum network require gas fees, which are paid in ETH. Gas serves as a measure of computational effort required to execute operations like transactions and smart contract executions. The fee structure incentivizes miners/validators to process transactions and prevents spam attacks on the network by requiring users to pay for resources consumed[4][5].
+Transactions on the Ethereum network require gas fees, which are paid in ETH. Gas serves as a measure of computational effort required to execute operations like transactions and smart contract executions. The fee structure incentivizes miners/validators to process transactions and prevents spam attacks on the network by requiring users to pay for resources consumed.
 
 ### Use Cases
 Ethereum supports various applications across multiple domains:
 - **Decentralized Finance (DeFi)**: Platforms built on Ethereum allow users to lend, borrow, trade, and earn interest without traditional financial intermediaries.
 - **Non-Fungible Tokens (NFTs)**: Ethereum provides a framework for creating unique digital assets that represent ownership of specific items or content.
-- **Decentralized Autonomous Organizations (DAOs)**: These entities operate through smart contracts, allowing members to govern collectively without centralized control[1][3].
-
-### Key Features
-
-- Utilises LSTM for time-series forecasting.
-- Preprocesses Ethereum price data and splits it into training and testing sets.
-- Evaluates the model based on error metrics such as MSE and R².
-- Visualises actual vs. predicted Ethereum prices.
+- **Decentralized Autonomous Organizations (DAOs)**: These entities operate through smart contracts, allowing members to govern collectively without centralized control.
 
 ## Dataset
-
 The dataset used in this project contains Ethereum prices from 2015 to 2024. It is stored in a CSV file (`ethereum_2015-08-07_2024-09-08.csv`), which includes date-wise prices and other relevant features. The data is preprocessed, normalised, and split into training and test sets before being fed into the LSTM model.
 
 ## Setup Instructions
