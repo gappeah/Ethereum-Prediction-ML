@@ -6,6 +6,31 @@ This project predicts the future price of Ethereum using historical data and a m
 
 The primary objective of this project is to predict Ethereum prices using historical data. The model is trained using an LSTM network and the data consists of Ethereum prices from August 2015 to September 2024. The predictions are evaluated using metrics such as **Mean Squared Error (MSE)**, **R-squared (R²)**, **Root Mean Squared Error (RMSE)**, **Mean Absolute Error (MAE)** and **Accuracy** (though accuracy is unconventional in regression tasks, it is also computed here).
 
+## What is Ethereum 
+Ethereum is a decentralised, global platform that uses blockchain technology to enable the creation of digital applications and currencies. It's known for its native cryptocurrency, ether (ETH), and is often mentioned alongside Bitcoin as a leader in the cryptocurrency and blockchain space. 
+Ethereum is a decentralized, open-source blockchain platform that enables developers to build and deploy decentralized applications (DApps) through the use of smart contracts. It was proposed by Vitalik Buterin in 2013 and officially launched on July 30, 2015. The native cryptocurrency of the Ethereum network is Ether (ETH), which serves multiple purposes, including transaction fees and as a means of value transfer.
+
+### Blockchain Architecture
+Ethereum operates on a blockchain, which is a distributed ledger technology that records transactions in a secure and immutable manner. Each block in the Ethereum blockchain contains a cryptographic hash of the previous block, creating a chain that ensures data integrity. This architecture allows for a decentralized network where no single entity has control over the entire blockchain.
+
+### Smart Contracts
+Smart contracts are self-executing contracts with the terms directly written into code. They run on the Ethereum Virtual Machine (EVM), which allows any code compatible with EVM to execute on the Ethereum network. Smart contracts facilitate, verify, or enforce the negotiation or performance of a contract without intermediaries, thus reducing costs and increasing efficiency[1][2].
+
+### Ethereum Virtual Machine (EVM)
+The EVM is a runtime environment for executing smart contracts and DApps on the Ethereum blockchain. It abstracts the underlying complexity of the network, allowing developers to write code in various programming languages that can be compiled into EVM bytecode. The EVM operates in a deterministic manner, ensuring that all nodes reach consensus on the state of the blockchain after executing transactions[1][4].
+
+### Consensus Mechanism
+Ethereum transitioned from a Proof-of-Work (PoW) to a Proof-of-Stake (PoS) consensus mechanism with an upgrade known as "the Merge" on September 15, 2022. In PoS, validators are chosen to create new blocks based on the amount of ETH they hold and are willing to "stake" as collateral. This shift significantly reduced Ethereum's energy consumption by approximately 99% compared to its previous mining model[2][5].
+
+### Gas Fees
+Transactions on the Ethereum network require gas fees, which are paid in ETH. Gas serves as a measure of computational effort required to execute operations like transactions and smart contract executions. The fee structure incentivizes miners/validators to process transactions and prevents spam attacks on the network by requiring users to pay for resources consumed[4][5].
+
+### Use Cases
+Ethereum supports various applications across multiple domains:
+- **Decentralized Finance (DeFi)**: Platforms built on Ethereum allow users to lend, borrow, trade, and earn interest without traditional financial intermediaries.
+- **Non-Fungible Tokens (NFTs)**: Ethereum provides a framework for creating unique digital assets that represent ownership of specific items or content.
+- **Decentralized Autonomous Organizations (DAOs)**: These entities operate through smart contracts, allowing members to govern collectively without centralized control[1][3].
+
 ### Key Features
 
 - Utilises LSTM for time-series forecasting.
