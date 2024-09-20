@@ -14,8 +14,10 @@ The primary objective of this project is to predict Ethereum prices using histor
 - Visualises actual vs. predicted Ethereum prices.
 
 ## What is Ethereum 
-Ethereum is a decentralised, global platform that uses blockchain technology to enable the creation of digital applications and currencies. It's known for its native cryptocurrency, ether (ETH), and is often mentioned alongside Bitcoin as a leader in the cryptocurrency and blockchain space. 
-Ethereum is a decentralized, open-source blockchain platform that enables developers to build and deploy decentralized applications (DApps) through the use of smart contracts. It was proposed by Vitalik Buterin in 2013 and officially launched on July 30, 2015. The native cryptocurrency of the Ethereum network is Ether (ETH), which serves multiple purposes, including transaction fees and as a means of value transfer.
+![images](https://github.com/user-attachments/assets/9af1cd8b-f9ec-45fb-8e3e-69c382497165)
+* Ethereum is a decentralised, global platform that uses blockchain technology to enable the creation of digital applications and currencies.
+* It's known for its native cryptocurrency, ether (ETH), and is often mentioned alongside Bitcoin as a leader in the cryptocurrency and blockchain space. 
+* Developers can build and deploy decentralised applications (DApps) through the use of smart contracts. It was proposed by Vitalik Buterin in 2013 and officially launched on July 30, 2015.
 
 ### Blockchain Architecture
 Ethereum operates on a blockchain, which is a distributed ledger technology that records transactions in a secure and immutable manner. Each block in the Ethereum blockchain contains a cryptographic hash of the previous block, creating a chain that ensures data integrity. This architecture allows for a decentralized network where no single entity has control over the entire blockchain.
